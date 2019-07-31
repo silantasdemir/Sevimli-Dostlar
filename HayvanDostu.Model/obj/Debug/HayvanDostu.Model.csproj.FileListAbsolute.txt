@@ -1,0 +1,12 @@
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\HayvanDostu.Model.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\HayvanDostu.Model.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\HayvanDostu.Core.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\EntityFramework.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\HayvanDostu.Core.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\HayvanDostu.Core.dll.config
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\bin\Debug\EntityFramework.xml
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\obj\Debug\HayvanDostu.Model.csprojAssemblyReference.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\obj\Debug\HayvanDostu.Model.csproj.CoreCompileInputs.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\obj\Debug\HayvanDostu.Model.csproj.CopyComplete
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\obj\Debug\HayvanDostu.Model.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Model\obj\Debug\HayvanDostu.Model.pdb

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<HayvanDostu.Model.Hayvan>
+
+@{
+    ViewBag.Title = "SahiplenmeSayfasi";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    var foto = "";
+}
+
+
+<div class="container">
+    <h2>Sahiplenme Sayfasi</h2>
+
+    @foreach (var item in Model)
+    {
+
+        foto = item.FotoUrl1;
+
+        <div class="row col-lg-12" style="margin-top:50px;">
+            <div class="col-md-2">
+                <img src="~/Image/@foto" style="width:150px; height:150px;" />
+
+
+            </div>
+            <div class="row col-md-5">
+                <table class="col-md-2">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ad)
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cinsiyet)
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DogumTarihi)
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Hikayesi)
+                        </th>
+                    </tr>
+                </table>
+                <table class="col-md-4">
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ad)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cinsiyet)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DogumTarihi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hikayesi)
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col-md-5">
+                <input type="button" value="Sahiplen" class="col-md-3 btn btn-outline-dark " style="border-radius:50px 50px;margin-top:40px;" />
+
+            </div>
+
+        </div>
+
+    }
+</div>

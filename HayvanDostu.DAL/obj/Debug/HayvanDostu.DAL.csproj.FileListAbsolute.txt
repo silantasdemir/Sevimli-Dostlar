@@ -1,0 +1,17 @@
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.DAL.dll.config
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.DAL.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.DAL.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\EntityFramework.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.Core.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.Model.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.Core.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.Core.dll.config
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\HayvanDostu.Model.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\EntityFramework.xml
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\obj\Debug\HayvanDostu.DAL.csprojAssemblyReference.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\obj\Debug\HayvanDostu.DAL.csproj.CoreCompileInputs.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\obj\Debug\HayvanDostu.DAL.csproj.CopyComplete
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\obj\Debug\HayvanDostu.DAL.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.DAL\obj\Debug\HayvanDostu.DAL.pdb

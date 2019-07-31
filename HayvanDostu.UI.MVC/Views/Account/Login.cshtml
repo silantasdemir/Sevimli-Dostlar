@@ -1,0 +1,75 @@
+﻿@using HayvanDostu.Model.Entity
+@model Uye
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="modal fade" id="Sifre" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Sevgili Üyemiz</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <form method="post" action="/Account/SifreDegistirme">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mailini yaz ve şifren için mail kutuna bak !</label>
+                        <label>Sevimli Dostlardan Tavsiye : Omega 3 </label><br /><br /><br />
+                        <label>Mail : </label>
+                        <input type="email" name="mail">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Şifremi Gönder</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container" style=" font-size:15px;">
+    <div class="row" style="margin-top:130px">
+        <div class="col-lg-5">
+            <img src="~/Content/Images/animals.png" style="width:500px;height:300px;" />
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-5" style="margin-top:90px">
+            <div class="panel-body">
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                {
+                    <fieldset>
+                        <p>
+                            <label>Kullanıcı Adı</label>
+                            @Html.TextBoxFor(a => a.KullaniciAdi, new { @class = "form-control", style = " font-size:15px;" })
+                        </p>
+                        <p>
+                            <label>Parola</label>
+                            @Html.TextBoxFor(a => a.Sifre, new { @class = "form-control", style = " font-size:15px;" })
+                        </p>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10" style=" font-size:15px;">
+                                    <input type="submit" name="name" value="Giriş" class="btn btn-success btn-lg col-lg-3" />
+                                    <a class="btn btn-link" data-toggle="modal" data-target="#Sifre">Şifremi Unuttum</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                }
+            </div>
+            <div class="panel-footer">
+                <br />
+                @if (ViewBag.Error != null)
+                {
+                    <span>@ViewBag.Error</span>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

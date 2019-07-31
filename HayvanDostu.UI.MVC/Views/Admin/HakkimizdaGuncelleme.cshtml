@@ -1,0 +1,68 @@
+﻿@using HayvanDostu.UI.MVC.Models
+
+@{
+    ViewBag.Title = "HakkimizdaGuncelleme";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("HakkimizdaGuncelleme", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row">
+            <img src="@Hakkimizda._hakkimizdaResim" style="width:1150px; height:200px; position:center; " />
+            <input type="file" name="guncellenecekImage" required" />
+        </div>
+        <br />
+        <div class="row">
+            <textarea rows="5" style="min-width:1150px;" name="guncellenecekYazı">@Hakkimizda._hakkimizdaYazisi</textarea>
+            <br />
+            <input type="submit" value="Güncelle" class="btn btn-success" />
+        </div>
+
+        <div class="panel-footer">
+            @if (ViewBag.Error != null)
+            {
+                <span>@ViewBag.Error</span>
+            }
+        </div>
+    </div>
+}
+
+@*@using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <div class="row">
+                @if (Hakkimizda._hakkimizdaResim == null)
+                {
+                    <img src="~/Content/Images/pet.png" style="width:1150px; height:300px; position:center; " />
+                }
+                else
+                {
+                    <img src=@Hakkimizda._hakkimizdaResim style="width:1150px; height:300px; position:center; " />
+                }
+                <input type="file" name="guncellenecekResim" required" />
+
+            </div>
+            <div class="row">
+                <br /><br /><br />
+                @if (Hakkimizda._hakkimizdaYazisi == null)
+                {
+                    <textarea> Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+                   </textarea>
+
+                }
+                else
+                {
+                    <textarea>
+                        @Hakkimizda._hakkimizdaYazisi
+                    </textarea>
+                }
+                <button class="btn btn-success">Yazı Güncelle</button>
+            </div>
+        </div>
+
+    }*@

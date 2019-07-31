@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HayvanDostu.Model.KurumsalUye>
+
+<h3 style="margin-left:20px;">Kurumsal Üyelik Talepleri</h3>
+<table class="table table-striped" style="margin-left:20px;margin-top:20px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Kurum Adı")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayName("Kullanıcı Adı")
+            </th>
+            <th>
+                @Html.DisplayName("Tarih")
+            </th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KurumAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KullaniciAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Onayla", "OnaylaKurumsal", new { id = item.ID }, new { @class = "btn btn-success boyutBtn" })
+                    @Html.ActionLink("Reddet", "ReddetKurumsal", new { id = item.ID }, new { @class = "btn btn-danger boyutBtn" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

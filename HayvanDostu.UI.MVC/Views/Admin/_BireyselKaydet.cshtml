@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+@model BireyselUye
+
+@using (Html.BeginForm("_BireyselKaydet", "Admin", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.ID > 0)
+    {
+        @Html.HiddenFor(a => a.ID)
+    }
+
+    <div class="form-group">
+        <label>Ad</label>
+        @Html.TextBoxFor(a => a.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Ad)
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        @Html.TextBoxFor(a => a.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Soyad)
+    </div>
+    <div class="form-group">
+        <label>Telefon</label>
+        @Html.TextBoxFor(a => a.Telefon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Telefon)
+    </div>
+    <div class="form-group">
+        <label>Adres</label>
+        @Html.TextBoxFor(a => a.Adres, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Adres)
+    </div>
+    <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(a => a.KullaniciAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.KullaniciAdi)
+    </div>
+    <div class="form-group">
+        <label>Mail</label>
+        @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Email)
+    </div>
+    <div class="form-group">
+        <label>Sifre</label>
+        @Html.TextBoxFor(a => a.Sifre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Sifre)
+    </div>
+
+    <div>
+        <input type="submit" value="Kaydet" />
+    </div>
+}
+

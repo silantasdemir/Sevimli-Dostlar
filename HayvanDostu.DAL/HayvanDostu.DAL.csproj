@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2F6183A-C7B7-4997-A969-B545DA3CC9EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HayvanDostu.DAL</RootNamespace>
+    <AssemblyName>HayvanDostu.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAdminDAL.cs" />
+    <Compile Include="Abstract\IBireyselUyeDAL.cs" />
+    <Compile Include="Abstract\ICizelgeDAL.cs" />
+    <Compile Include="Abstract\IHayvanCinsiDAL.cs" />
+    <Compile Include="Abstract\IHayvanDAL.cs" />
+    <Compile Include="Abstract\IHayvanTuruDAL.cs" />
+    <Compile Include="Abstract\IHizmetDAL.cs" />
+    <Compile Include="Abstract\IKonaklamaDAL.cs" />
+    <Compile Include="Abstract\IKonaklamaRezervasyonDAL.cs" />
+    <Compile Include="Abstract\IKurumsalUyeDAL.cs" />
+    <Compile Include="Abstract\IOdemeDAL.cs" />
+    <Compile Include="Abstract\IPuanDAL.cs" />
+    <Compile Include="Abstract\IRezervasyonDAL.cs" />
+    <Compile Include="Abstract\IVeterinerDAL.cs" />
+    <Compile Include="Abstract\IYorumDAL.cs" />
+    <Compile Include="Concreate\AdminRepository.cs" />
+    <Compile Include="Concreate\BireyselUyeRepository.cs" />
+    <Compile Include="Concreate\CizelgeRepository.cs" />
+    <Compile Include="Concreate\HayvanCinsiRepository.cs" />
+    <Compile Include="Concreate\HayvanDostuDbContext.cs" />
+    <Compile Include="Concreate\HayvanRepository.cs" />
+    <Compile Include="Concreate\HayvanTuruRepository.cs" />
+    <Compile Include="Concreate\HizmetRepository.cs" />
+    <Compile Include="Concreate\KonaklamaRepository.cs" />
+    <Compile Include="Concreate\KonaklamaRezervasyonRepository.cs" />
+    <Compile Include="Concreate\KurumsalUyeRepository.cs" />
+    <Compile Include="Concreate\MyStrategy.cs" />
+    <Compile Include="Concreate\OdemeRepository.cs" />
+    <Compile Include="Concreate\PuanRepository.cs" />
+    <Compile Include="Concreate\RezervasyonRepository.cs" />
+    <Compile Include="Concreate\VeterinerRepository.cs" />
+    <Compile Include="Concreate\YorumRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HayvanDostu.Core\HayvanDostu.Core.csproj">
+      <Project>{4867047c-438f-4166-9dd9-6d6691d66a64}</Project>
+      <Name>HayvanDostu.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HayvanDostu.Model\HayvanDostu.Model.csproj">
+      <Project>{35f41d9d-7cae-4b9b-8ad9-dae7b873efe7}</Project>
+      <Name>HayvanDostu.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

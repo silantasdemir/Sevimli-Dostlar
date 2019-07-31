@@ -1,0 +1,12 @@
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\HayvanDostu.Core.dll.config
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\HayvanDostu.Core.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\HayvanDostu.Core.pdb
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\EntityFramework.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\EntityFramework.xml
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\obj\Debug\HayvanDostu.Core.csprojAssemblyReference.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\obj\Debug\HayvanDostu.Core.csproj.CoreCompileInputs.cache
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\obj\Debug\HayvanDostu.Core.csproj.CopyComplete
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\obj\Debug\HayvanDostu.Core.dll
+C:\Users\silan\Desktop\HayvanDostu\HayvanDostu.Core\obj\Debug\HayvanDostu.Core.pdb

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:10px;">
+        <a class="btn btn-outline-primary col-lg-2" style="border:0px; font-size:15px;" href="#bireysel">
+            <img src="~/Content/Images/bireysel.png" style="width:30px;height:30px;" alt="bireysel" />
+        </a>
+        <a class="btn btn-outline-primary col-lg-2" style="border:0px; font-size:15px;" href="#kurumsal">
+            <img src="~/Content/Images/kurumsal.png" style="width:30px;height:30px;" alt="kurumsal" />
+        </a>
+    </div>
+    <br />
+</div>
+
+<div id="bireysel">
+    @Html.Action("_BireyselUyelikTalepleri", "Admin")
+</div>
+<br /><hr /><br />
+<div id="kurumsal">
+    @Html.Action("_KurumsalUyelikTalepleri", "Admin")
+</div>
+
+
+@*<td><button type="button" class="btn btn-success boyutBtn" data-toggle="modal" data-target="#Sil">Sil</button></td>*@
+
+@*<div class="modal fade" id="Sil" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Silmek istediğinize emin misiniz ?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <form method="get" action="/Admin/_bireyselSilme" id=@item.ID>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>@item.Ad</label>
+                            <label>@item.Soyad</label>
+                            <label>@item.KullaniciAdi</label>
+                            <label>@item.Email</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Sil</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>*@

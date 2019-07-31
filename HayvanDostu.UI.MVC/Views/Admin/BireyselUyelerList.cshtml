@@ -1,0 +1,137 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+
+        .boyutBtn {
+            width: 90px;
+            height: 35px;
+            text-align: center;
+            border-radius: 50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="margin-top:10px;">
+        <div class="col-lg-2">
+            <a href="/Admin/Home"><img src="~/Content/Images/icon.png" style="width:50px;height:50px; margin-left:50px;" /></a>
+        </div>
+        <div class="col-lg-8"></div>
+        <div class="col-lg-2" style="margin-top:10px;">
+            <b>
+                @{Admin admin = Session["adminKullanici"] as Admin;
+                    @("Admin ") @admin.KullaniciAdi }
+            </b>
+        </div>
+    </div>
+    <div style="width:90%; margin:20px auto" class="tablecontainer">
+        <table id="myDatatable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Mail</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+        </table>
+        <a class="popup btn btn-primary" href="/Admin/_BireyselKaydet/0" style="margin-bottom:20px; margin-top:20px;">Bireysel Ekle</a>
+    </div>
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var oTable = $('#myDatatable').DataTable({
+                "ajax": {
+                    "url": '/Admin/GetBireysel',
+                    "type": "get",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "ID", "autoWidth": true },
+                    { "data": "Ad", "autoWidth": true },
+                    { "data": "Soyad", "autoWidth": true },
+                    { "data": "KullaniciAdi", "autoWidth": true },
+                    { "data": "Email", "autoWidth": true },
+
+                    {
+                        "data": "ID", "width": "50px", "render": function (data) {
+                            return '<a class="popup btn btn-success" href="/Admin/_BireyselKaydet/' + data + '">Düzenle</a>';
+                        }
+                    },
+                    {
+                        "data": "ID", "width": "50px", "render": function (data) {
+                            return '<a class="popup btn btn-danger" href="/Admin/_BireyselSil/' + data + '">Sil</a>';
+                        }
+                    }
+                ]
+            })
+            $('.tablecontainer').on('click', 'a.popup', function (e) {
+                e.preventDefault();
+                OpenPopup($(this).attr('href'));
+            })
+            function OpenPopup(pageUrl) {
+                var $pageContent = $('<div/>');
+                $pageContent.load(pageUrl, function () {
+                    $('#popupForm', $pageContent).removeData('validator');
+                    $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse('form');
+
+                });
+
+                $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+                    .html($pageContent)
+                    .dialog({
+                        draggable: false,
+                        autoOpen: false,
+                        resizable: false,
+                        model: true,
+                        title: 'Sevimli Dostlar',
+                        height: 550,
+                        width: 600,
+                        close: function () {
+                            $dialog.dialog('destroy').remove();
+                        }
+                    })
+
+                $('.popupWindow').on('submit', '#popupForm', function (e) {
+                    var url = $('#popupForm')[0].action;
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $('#popupForm').serialize(),
+                        success: function (data) {
+                            if (data.status) {
+                                $dialog.dialog('close');
+                                oTable.ajax.reload();
+                            }
+                        }
+                    })
+
+                    e.preventDefault();
+                })
+                $dialog.dialog('open');
+            }
+        })
+    </script>
+</body>
+</html>

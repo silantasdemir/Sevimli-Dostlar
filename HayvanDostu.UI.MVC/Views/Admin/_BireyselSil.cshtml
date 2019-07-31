@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@model BireyselUye
+
+<h2>Silmek İstediğine Emin Misin ?</h2>
+@using (Html.BeginForm("_BireyselSil", "Admin", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.ID)
+    <div class="form-group">
+        <label>Ad</label>
+        <p>@Model.Ad</p>
+    </div>
+
+    <div class="form-group">
+        <label>Soyad</label>
+        <p>@Model.Soyad</p>
+    </div>
+    <div class="form-group">
+        <label>Telefon</label>
+        <p>@Model.Telefon</p>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <p>@Model.Email</p>
+    </div>
+
+    <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        <p>@Model.KullaniciAdi</p>
+    </div>
+
+    <div>
+        <input type="submit" value="Sil" />
+    </div>
+}
+

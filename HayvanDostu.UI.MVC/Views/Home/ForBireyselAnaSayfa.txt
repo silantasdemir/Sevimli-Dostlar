@@ -1,0 +1,133 @@
+﻿@model BireyselUye
+
+@{
+    ViewBag.Title = "BireyselAnaSayfa";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<style>
+    .control-label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+@using (Html.BeginForm("BireyselAnaSayfa", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <h2>Bireysel Üye Profili</h2>
+        <hr />
+
+        <h4>Kişisel Bilgiler</h4>
+
+        <div class="row">
+            <div class=" form-horizontal col-lg-6" style=" margin-top:40px; font-size:17px">
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { disabled = "true", @readonly = "readonly" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DogumTarihi, "Doğum Tarihi", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        <div class="">
+                            @Html.EditorFor(model => model.DogumTarihi, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cinsiyet, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Cinsiyet, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.TextAreaFor(model => model.Adres, 3, 45, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EvcilHayvaniVarMi, "Evcil Hayvanınız Var mı?", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.EvcilHayvaniVarMi, "True")
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Sayi, "Varsa Sayısı", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Sayi, new { htmlAttributes = new { disabled = "true", @readonly = "readonly" } })
+
+                    </div>
+                </div>
+            </div>
+            <div class=" col-lg-6" style=" margin-top:40px;">
+                <div class="form-group">
+
+                    <div class="col-md-4" style="margin-left:300px;">
+                        <img src="~/Image/@Model.FotoUrl" height="100" />
+                        @*@Html.LabelFor(model => model.FotoUrl, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+        <div class="form-horizontal" style=" margin-top:40px;">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Oluştur" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            @if (ViewBag.Error != null)
+            {
+                <span>@ViewBag.Error</span>
+            }
+
+        </div>
+
+
+    </div>
+}

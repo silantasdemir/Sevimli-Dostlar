@@ -1,0 +1,81 @@
+﻿@model Veteriner
+
+@using (Html.BeginForm("VeterinerKayit", "Account", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ad, "Veteriner Adi", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Soyad, "Veteriner Soyadi", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefon, "Telefon", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, "e-Mail", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DogumTarihi, "Doğum Tarihi", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DogumTarihi, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            @Html.ValidationMessageFor(model => model.DogumTarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.MezunOlduguOkul, "Mezun Olduğu Okul", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MezunOlduguOkul, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MezunOlduguOkul, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.MezuniyetTarihi, "Mezuniyet Tarihi", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MezuniyetTarihi, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            @Html.ValidationMessageFor(model => model.MezuniyetTarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Deneyimler, htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Deneyimler, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Deneyimler, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Veteriner Ekle" class="btn btn-default" />
+        </div>
+    </div>
+
+    <div class="panel-footer">
+        @if (ViewBag.Error != null)
+        {
+            <span>@ViewBag.Error</span>
+        }
+
+    </div>
+}

@@ -1,0 +1,211 @@
+﻿
+@model BireyselUye
+
+@{
+    ViewBag.Title = "BireyselAnaSayfa";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    var foto = "";
+}
+<style>
+    h2, p {
+        margin-left: 130px;
+    }
+</style>
+
+<h2>BireyselAnaSayfa</h2>
+
+
+<div class="container col-lg-10" >
+    <div class="row col-lg-10" style="border:double">
+    
+            <table class="table col-lg-2">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ad)
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Soyad)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DogumTarihi)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cinsiyet)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Evcil Hayvan")
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Sayısı")
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Kullanıcı Adı")
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sifre)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Aktif/Pasif")
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </th>
+                </tr>
+                <tr>
+                    <th style="height:100px">
+                        @Html.DisplayNameFor(model => model.Adres)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Katılım Tarihi")
+                    </th>
+                </tr>
+                @*<tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FotoUrl)
+                    </th>
+                </tr>*@
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+
+            <table class="table col-lg-4">
+
+                <tr>
+                    <td>
+                        @Html.DisplayName(Model.Ad.ToUpper())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayName(Model.Soyad.ToUpper())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayName(Model.DogumTarihi.ToLongDateString())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @if (Model.Cinsiyet == true)
+                        {
+                            @Html.DisplayName("Erkek")
+                        }
+                        else
+                        {
+                            @Html.DisplayName("Kadın")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @if (Model.EvcilHayvaniVarMi == true)
+                        {
+                            @Html.DisplayName("Var")
+                        }
+                        else
+                        {
+                            @Html.DisplayName("Yok")
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Sayi)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.KullaniciAdi)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Sifre)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @if (Model.OnaylandiMi == true)
+                        {
+                            @Html.DisplayName("Aktif")
+                        }
+                        else
+                        {
+                            @Html.DisplayName("Pasif")
+                        }
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Telefon)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height:100px">
+                        @Html.DisplayFor(modelItem => Model.Adres)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.CreatedDate)
+
+                    </td>
+                </tr>
+
+
+            </table>
+    
+        @{
+            foto = Model.FotoUrl;
+        }
+        <p class="col-md-3" style="margin-top:10px;">
+            <img src="~/Image/@foto" style="width:200px; height:200px; border:double 2px" />
+
+        </p>
+
+    </div>
+    <table>
+        <tr>
+            <td>
+                @Html.ActionLink("Profil Ayarları", "Profil Ayarları", new { id = Model.ID}) |
+                @Html.ActionLink("Hesabı Sil", "Hesabı Sil", new { id = Model.ID })
+            </td>
+        </tr>
+    </table>
+</div>
